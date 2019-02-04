@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CrossWord.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <Color x:Key="backgroundColour">#FF302E</Color>
+            <Color x:Key="backgroundCellColour">#FF302E</Color>
+            <Color x:Key="backgroundGridColour">#FF302E</Color>
+            <Color x:Key="buttonColour">#FF302E</Color>
+            <Color x:Key="foregroundColour">#00302E</Color>
+            <Color x:Key="fontColour">#00302E</Color>
+            <Color x:Key="highlightColour">#00302E</Color>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

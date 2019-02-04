@@ -1,0 +1,1 @@
+C:\Users\Zac\source\repos\CrossWord\CrossWord\CrossWord.UWP\CrossWord.UWP.csproj;x86
