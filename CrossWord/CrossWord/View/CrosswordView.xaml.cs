@@ -252,7 +252,11 @@ namespace CrossWord.View
                     entry.SetDynamicResource(CustomEntry.StyleProperty, "orientationEntryStyle");
                     entry.TextChanged += (s, e) => 
                     {
-                        if (IsCharUpper(e.NewTextValue))
+                        if (IsCharUpper(e.NewTextValue) == null)
+                        {
+                            return;
+                        }
+                        if ((bool)IsCharUpper(e.NewTextValue))
                         {
                             LetterCell_TextChanged(entry, e);
                         }
@@ -421,16 +425,25 @@ namespace CrossWord.View
         }
 
         // Check if first letter is upper
-        private bool IsCharUpper(string text)
+        private Nullable<bool> IsCharUpper(string text)
         {
-            if (Char.IsUpper(text[0]))
+            if(text.Length == 1)
             {
-                return true;
-            }
-            else
+                if (Char.IsUpper(text[0]))
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+
+                
+            } else
             {
-                return false;
+                return null;
             }
+
         }
 
         // Update Scoring
