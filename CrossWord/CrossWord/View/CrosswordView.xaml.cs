@@ -240,9 +240,9 @@ namespace CrossWord.View
                     {
                         MaxLength = 1,
                         HorizontalTextAlignment = TextAlignment.Center,
-
                     };
                     entry.Keyboard = Keyboard.Create(KeyboardFlags.CapitalizeCharacter);
+                    //entry.Effects.Add(Effect.Resolve("FormsCommunityToolkit.Effects.EntryCapitalizeKeyboard"));
 
                     entry.BindingContext = board[i][j];
                     entry.SetBinding(CustomEntry.IsEnabledProperty, new Binding("IsEnabled", BindingMode.OneWay));
@@ -250,7 +250,18 @@ namespace CrossWord.View
                     entry.SetBinding(CustomEntry.TextColorProperty, new Binding("FontColour", BindingMode.OneWay));
                     entry.SetBinding(CustomEntry.FontAttributesProperty, new Binding("FontWeight", BindingMode.OneWay));
                     entry.SetDynamicResource(CustomEntry.StyleProperty, "orientationEntryStyle");
-                    entry.TextChanged += LetterCell_TextChanged;
+                    entry.TextChanged += (s, e) => 
+                    {
+                        if (IsCharUpper(e.NewTextValue))
+                        {
+                            LetterCell_TextChanged(entry, e);
+                        }
+                        else
+                        {
+                            entry.Text = e.NewTextValue.ToUpper();
+                        }
+
+                    };
 
                     entry.Focused += (s, e) =>
                     {
@@ -348,14 +359,13 @@ namespace CrossWord.View
         }
 
         // Incriment cell focus to next available cell or defocus
-        private void LetterCell_TextChanged(object sender, TextChangedEventArgs e)
+        private void LetterCell_TextChanged(CustomEntry entry, TextChangedEventArgs e)
         {
             // Check if the character is not empty
             if (!IsCellEmpty(e))
             {
                 return;
             }
-
 
             // Check if word is complete and correct - if so, defocus and dehighlight
             if (_wordChecker.IsWordCorrect())
@@ -407,6 +417,19 @@ namespace CrossWord.View
                 {
                     CrosswordViewModel.Instance().DisplayBoard[nextCellPos.Item2][nextCellPos.Item1].CellEntry.Focus();
                 }
+            }
+        }
+
+        // Check if first letter is upper
+        private bool IsCharUpper(string text)
+        {
+            if (Char.IsUpper(text[0]))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
             }
         }
 

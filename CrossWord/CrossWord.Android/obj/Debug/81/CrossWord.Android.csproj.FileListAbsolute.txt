@@ -207,8 +207,6 @@ C:\Users\Zac\source\repos\CrossWordXamarin\CrossWord\CrossWord\CrossWord.Android
 C:\Users\Zac\source\repos\CrossWordXamarin\CrossWord\CrossWord\CrossWord.Android\obj\Debug\81\android\assets\System.Xml.pdb
 C:\Users\Zac\source\repos\CrossWordXamarin\CrossWord\CrossWord\CrossWord.Android\obj\Debug\81\android\assets\Xamarin.Forms.Core.pdb
 C:\Users\Zac\source\repos\CrossWordXamarin\CrossWord\CrossWord\CrossWord.Android\obj\Debug\81\android\assets\Xamarin.Forms.Xaml.pdb
-C:\Users\Zac\source\repos\CrossWordXamarin\CrossWord\CrossWord\CrossWord\bin\Debug\netstandard2.0\CrossWord.dll
-C:\Users\Zac\source\repos\CrossWordXamarin\CrossWord\CrossWord\CrossWord.Android\bin\Debug\CrossWord.dll.mdb
 C:\Users\Zac\source\repos\CrossWordXamarin\CrossWord\CrossWord\CrossWord.Android\obj\Debug\81\linksrc\CrossWord.dll.mdb
 C:\Users\Zac\source\repos\CrossWordXamarin\CrossWord\CrossWord\CrossWord.Android\obj\Debug\81\linksrc\FormsViewGroup.dll.mdb
 C:\Users\Zac\source\repos\CrossWordXamarin\CrossWord\CrossWord\CrossWord.Android\obj\Debug\81\linksrc\Xamarin.Forms.Platform.Android.dll.mdb
