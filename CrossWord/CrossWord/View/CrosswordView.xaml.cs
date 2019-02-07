@@ -236,7 +236,7 @@ namespace CrossWord.View
                     labelDefinitionLocation.SetDynamicResource(Label.StyleProperty, "orientationLabelStyle");
                     labelDefinitionLocation.SetDynamicResource(Label.TextColorProperty, "fontColour");
 
-                    var entry = new Entry()
+                    var entry = new CustomEntry()
                     {
                         MaxLength = 1,
                         HorizontalTextAlignment = TextAlignment.Center,
@@ -245,11 +245,11 @@ namespace CrossWord.View
                     entry.Keyboard = Keyboard.Create(KeyboardFlags.CapitalizeCharacter);
 
                     entry.BindingContext = board[i][j];
-                    entry.SetBinding(Entry.IsEnabledProperty, new Binding("IsEnabled", BindingMode.OneWay));
-                    entry.SetBinding(Entry.TextProperty, new Binding("LetterIn", BindingMode.TwoWay, new StringToCharConverter()));
-                    entry.SetBinding(Entry.TextColorProperty, new Binding("FontColour", BindingMode.OneWay));
-                    entry.SetBinding(Entry.FontAttributesProperty, new Binding("FontWeight", BindingMode.OneWay));
-                    entry.SetDynamicResource(Entry.StyleProperty, "orientationEntryStyle");
+                    entry.SetBinding(CustomEntry.IsEnabledProperty, new Binding("IsEnabled", BindingMode.OneWay));
+                    entry.SetBinding(CustomEntry.TextProperty, new Binding("LetterIn", BindingMode.TwoWay, new StringToCharConverter()));
+                    entry.SetBinding(CustomEntry.TextColorProperty, new Binding("FontColour", BindingMode.OneWay));
+                    entry.SetBinding(CustomEntry.FontAttributesProperty, new Binding("FontWeight", BindingMode.OneWay));
+                    entry.SetDynamicResource(CustomEntry.StyleProperty, "orientationEntryStyle");
                     entry.TextChanged += LetterCell_TextChanged;
 
                     entry.Focused += (s, e) =>
